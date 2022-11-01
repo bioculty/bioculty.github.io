@@ -19,17 +19,20 @@ jobs:
         uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
-          # extended: true
+          extended: true
+
+      - name: rm public dir
+        run: rm -rf public/ resources/
 
       - name: npm Install
         run: npm install
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --ignoreCache --cleanDestinationDir --gc
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        if: github.ref == 'refs/heads/master'
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
