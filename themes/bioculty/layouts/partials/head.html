@@ -13,6 +13,7 @@
     {{ $styles = $styles | fingerprint }}
     {{ end }}
     <link href="{{ $styles.RelPermalink }}" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="{{ .Site.BaseURL }}/images/plus10Icon.svg">
   
      {{/* Load Bootstrap JS. */}}
      {{ $js := resources.Get "js/index.js" }}

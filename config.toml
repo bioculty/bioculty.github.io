@@ -37,4 +37,4 @@ theme = "bioculty"
 
 [[resources]]
   name = 'iconPlus10'
-  src = 'static/images/iconPlus10.png'
+  src = 'static/images/plus10Icon.svg'
